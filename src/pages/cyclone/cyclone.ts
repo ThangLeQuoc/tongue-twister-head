@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from "angularfire2";
 
 /**
  * Generated class for the Cyclone page.
@@ -13,7 +14,82 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Cyclone {
 
-  constructor(public navCtrl: NavController) {
+  cycloneTwisterList: FirebaseListObservable<any>;
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private angularFire: AngularFire ) {
+    this.cycloneTwisterList = angularFire.database.list('/cyclone');
+  }
+
+  /** Add new twister */
+  addTwister() {
+    let alert = this.alertCtrl.create({
+      title: "Create new twister",
+      message: "Let's create some cruel storm",
+      inputs: [{
+        name: "txtTwister",
+        placeholder: "Text"
+      }],
+      buttons: [{
+        text: "Cancel",
+        role: "cancel"
+      }, {
+        text: 'Save',
+        handler: data => {
+          this.cycloneTwisterList.push({ text: data.txtTwister });
+        }
+      }]
+    });
+
+    alert.present();
+  }
+
+  /**
+   * Edit Twister
+   * @param twisterKey : Twisterkey
+   * @param twisterText : TwisterText
+   */
+  editTwister(twisterKey, twisterText) {
+    let alert = this.alertCtrl.create({
+      title: 'Edit twister',
+      message: ' Lessen, or pump it up!',
+      inputs: [{
+        name: "txtTwister",
+        placeholder: "Text",
+        value: twisterText
+      }],
+      buttons: [{
+        text: 'Update',
+        handler: (data) => {
+          this.cycloneTwisterList.update(twisterKey, {text: data.txtTwister});
+        }
+      }, {
+        text: 'Cancel',
+        role: 'cancel'
+      }]
+    });
+
+    alert.present();
+  }
+
+ /**
+  * Remove twister
+  * @param twisterKey Twister key to be removed
+  */
+  removeTwister(twisterKey) {
+    let alert = this.alertCtrl.create({
+      title: 'Remove twister',
+      message: 'Shall we dispel this lovely one ?',
+      buttons: [{
+        text: 'Yup !',
+        handler: () => {
+          this.cycloneTwisterList.remove(twisterKey);
+        }
+      }, {
+        text: 'Nope',
+        role: 'cancel'
+      }]
+    });
+
+    alert.present();
   }
 
 }

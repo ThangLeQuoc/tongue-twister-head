@@ -5,19 +5,40 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Tornado Realm</ion-title>
-       <ion-buttons end>
-      <button ion-button icon-only>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addTwister()">
         <ion-icon name="ios-add-circle-outline"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let twister of tornadoTwisterList | async">
+      <ion-item>
+        {{twister.text}}
+      </ion-item>
+      <!-- Left side: Pronouce it  -->
+      <ion-item-options side="left">
+        <button ion-button icon-only color="light">
+         <ion-icon name="ios-megaphone-outline"></ion-icon>
+       </button>
+      </ion-item-options>
 
+
+      <!-- Right side: Edit it  -->
+      <ion-item-options side="right">
+        <button ion-button icon-only color="dark" (click)="editTwister(twister.$key, twister.text)">
+         <ion-icon name="ios-color-wand-outline"></ion-icon>
+       </button>
+        <button ion-button icon-only color="danger" (click)="removeTwister(twister.$key)">
+         <ion-icon name="ios-trash-outline"></ion-icon>
+       </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

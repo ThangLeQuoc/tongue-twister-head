@@ -34,24 +34,13 @@
 
       <!-- Right side: Edit it  -->
       <ion-item-options side="right">
-        <button ion-button icon-only color="dark">
+        <button ion-button icon-only color="dark" (click)="editTwister(twister.$key, twister.text)">
          <ion-icon name="ios-color-wand-outline"></ion-icon>
        </button>
-        <button ion-button icon-only color="danger">
+        <button ion-button icon-only color="danger" (click)="removeTwister(twister.$key)">
          <ion-icon name="ios-trash-outline"></ion-icon>
        </button>
       </ion-item-options>
     </ion-item-sliding>
-
-
-
-
-
-
-    <!--
-    <ion-item *ngFor="let twister of whirlwindTwisterList | async">
-      {{twister.text}}
-    </ion-item>
-    -->
   </ion-list>
 </ion-content>
