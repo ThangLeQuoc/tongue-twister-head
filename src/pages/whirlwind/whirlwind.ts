@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { Twister } from "../../models/twister";
+// Text to speech
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
+
+
 /**
  * Generated class for the Whirlwind page.
  *
@@ -15,11 +19,19 @@ import { Twister } from "../../models/twister";
 export class Whirlwind {
   whirlwindTwisterList: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private angularFire: AngularFire) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private angularFire: AngularFire, private textToSpeech: TextToSpeech) {
     this.whirlwindTwisterList = angularFire.database.list('/whirlwind');
   }
 
-
+  playTwister(twisterText) {
+    this.textToSpeech.speak(twisterText).catch((err) => {
+      let alert = this.alertCtrl.create({
+        title: "Something happened",
+        message: err
+      });
+      alert.present();
+    });
+  }
   /**
    * Add new twister
    */
@@ -80,7 +92,7 @@ export class Whirlwind {
       buttons: [{
         text: 'Update',
         handler: (data) => {
-          this.whirlwindTwisterList.update(twisterKey, {text: data.txtTwister});
+          this.whirlwindTwisterList.update(twisterKey, { text: data.txtTwister });
         }
       }, {
         text: 'Cancel',

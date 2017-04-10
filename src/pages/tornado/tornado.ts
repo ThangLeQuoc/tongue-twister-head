@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from "angularfire2";
+// Text to speech
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the Tornado page.
@@ -15,11 +17,20 @@ import { AngularFire, FirebaseListObservable } from "angularfire2";
 export class Tornado {
   tornadoTwisterList: FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private angularFire: AngularFire) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private angularFire: AngularFire, private textToSpeech: TextToSpeech) {
     this.tornadoTwisterList = angularFire.database.list('/tornado');
   }
 
-
+  playTwister(twisterText) {
+    this.textToSpeech.speak(twisterText).catch((err) => {
+      let alert = this.alertCtrl.create({
+        title: "Something happened",
+        message: err
+      });
+      alert.present();
+    });
+  }
+  
 
   /**
    * Add Twister
@@ -46,11 +57,11 @@ export class Tornado {
   }
 
 
-/**
- * Update Twister
- * @param twisterKey : TwisterKey to be updated
- * @param twisterText : Twister Text
- */
+  /**
+   * Update Twister
+   * @param twisterKey : TwisterKey to be updated
+   * @param twisterText : Twister Text
+   */
   editTwister(twisterKey, twisterText) {
     let alert = this.alertCtrl.create({
       title: 'Edit twister',
@@ -63,7 +74,7 @@ export class Tornado {
       buttons: [{
         text: 'Update',
         handler: (data) => {
-          this.tornadoTwisterList.update(twisterKey, {text: data.txtTwister});
+          this.tornadoTwisterList.update(twisterKey, { text: data.txtTwister });
         }
       }, {
         text: 'Cancel',

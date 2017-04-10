@@ -8,11 +8,13 @@ import { Overview } from "../pages/overview/overview";
 import { Whirlwind } from "../pages/whirlwind/whirlwind";
 import { Cyclone } from "../pages/cyclone/cyclone";
 import { Tornado } from "../pages/tornado/tornado";
+import { GoogleChartComponent } from "../components/google-chart.component";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from "angularfire2";
 
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDU7vWpWfEpYqagkmcmOEVqZDlzS0lTHt4",
@@ -31,7 +33,8 @@ export const firebaseConfig = {
     Overview,
     Whirlwind,
     Cyclone,
-    Tornado
+    Tornado,
+    GoogleChartComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    TextToSpeech
   ]
 })
 export class AppModule { }
