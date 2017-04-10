@@ -20,7 +20,9 @@ export class Whirlwind {
   }
 
 
-
+  /**
+   * Add new twister
+   */
   addTwister() {
     let alert = this.alertCtrl.create({
       title: "Create new twister",
@@ -42,4 +44,51 @@ export class Whirlwind {
 
     alert.present();
   }
+
+  /**
+   * Remove selected twisterr
+   */
+
+  removeTwister(twisterKey) {
+    let alert = this.alertCtrl.create({
+      title: 'Remove twister',
+      message: 'Shall we dispel this lovely one ?',
+      buttons: [{
+        text: 'Yup !',
+        handler: () => {
+          this.whirlwindTwisterList.remove(twisterKey);
+        }
+      }, {
+        text: 'Nope',
+        role: 'cancel'
+      }]
+    });
+
+    alert.present();
+  }
+
+
+  editTwister(twisterKey, twisterText) {
+    let alert = this.alertCtrl.create({
+      title: 'Edit twister',
+      message: ' Lessen, or pump it up!',
+      inputs: [{
+        name: "txtTwister",
+        placeholder: "Text",
+        value: twisterText
+      }],
+      buttons: [{
+        text: 'Update',
+        handler: (data) => {
+          this.whirlwindTwisterList.update(twisterKey, {text: data.txtTwister});
+        }
+      }, {
+        text: 'Cancel',
+        role: 'cancel'
+      }]
+    });
+
+    alert.present();
+  }
+
 }
