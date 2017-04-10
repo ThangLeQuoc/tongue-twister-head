@@ -11,6 +11,18 @@ import { Tornado } from "../pages/tornado/tornado";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFireModule } from "angularfire2";
+
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyDU7vWpWfEpYqagkmcmOEVqZDlzS0lTHt4",
+  authDomain: "tongue-twister-puzzles.firebaseapp.com",
+  databaseURL: "https://tongue-twister-puzzles.firebaseio.com",
+  projectId: "tongue-twister-puzzles",
+  storageBucket: "tongue-twister-puzzles.appspot.com",
+  messagingSenderId: "633182245850"
+}
+
 
 @NgModule({
   declarations: [
@@ -23,7 +35,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +50,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

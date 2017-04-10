@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>Whirlwind Realm</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="addTwister()">
         <ion-icon name="ios-add-circle-outline"></ion-icon>
       </button>
     </ion-buttons>
@@ -19,5 +19,39 @@
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let twister of whirlwindTwisterList | async">
+      <ion-item>
+        {{twister.text}}
+      </ion-item>
+      <!-- Left side: Pronouce it  -->
+      <ion-item-options side="left">
+        <button ion-button icon-only color="light">
+         <ion-icon name="ios-megaphone-outline"></ion-icon>
+       </button>
+      </ion-item-options>
 
+
+      <!-- Right side: Edit it  -->
+      <ion-item-options side="right">
+        <button ion-button icon-only color="dark">
+         <ion-icon name="ios-color-wand-outline"></ion-icon>
+       </button>
+        <button ion-button icon-only color="danger">
+         <ion-icon name="ios-trash-outline"></ion-icon>
+       </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+
+
+
+
+
+    <!--
+    <ion-item *ngFor="let twister of whirlwindTwisterList | async">
+      {{twister.text}}
+    </ion-item>
+    -->
+  </ion-list>
 </ion-content>
