@@ -57180,7 +57180,7 @@ var Cyclone = (function () {
 }());
 Cyclone = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-cyclone',template:/*ion-inline-start:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\cyclone\cyclone.html"*/'<!--\n  Generated template for the Cyclone page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>cyclone</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\cyclone\cyclone.html"*/,
+        selector: 'page-cyclone',template:/*ion-inline-start:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\cyclone\cyclone.html"*/'<!--\n  Generated template for the Cyclone page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Cyclone Realm</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only>\n        <ion-icon name="ios-add-circle-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\cyclone\cyclone.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], Cyclone);
@@ -57262,7 +57262,7 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 TabsPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({template:/*ion-inline-start:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab tabIcon="ios-speedometer-outline" tabTitle="Overview" [root]="overviewRoot" ></ion-tab>\n\n  <ion-tab tabIcon="ios-cloud-circle-outline" tabTitle="Whirlwind" [root]="whirlwindRoot" ></ion-tab>\n\n  <ion-tab tabIcon="ios-rainy-outline" tabTitle="Cyclone" [root]="cycloneRoot" ></ion-tab>\n\n  <ion-tab tabIcon="ios-thunderstorm-outline" tabTitle="Tornado" [root]="tornadoRoot" ></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\tabs\tabs.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({template:/*ion-inline-start:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab tabIcon="ios-speedometer-outline" tabTitle="Overview" [root]="overviewRoot" ></ion-tab>\n\n  <ion-tab tabIcon="ios-cloudy-outline" tabTitle="Whirlwind" [root]="whirlwindRoot" ></ion-tab>\n\n  <ion-tab tabIcon="ios-rainy-outline" tabTitle="Cyclone" [root]="cycloneRoot" ></ion-tab>\n\n  <ion-tab tabIcon="ios-thunderstorm-outline" tabTitle="Tornado" [root]="tornadoRoot" ></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\tabs\tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -57303,7 +57303,7 @@ var Tornado = (function () {
 }());
 Tornado = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-tornado',template:/*ion-inline-start:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\tornado\tornado.html"*/'<!--\n  Generated template for the Tornado page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>tornado</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\tornado\tornado.html"*/,
+        selector: 'page-tornado',template:/*ion-inline-start:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\tornado\tornado.html"*/'<!--\n  Generated template for the Tornado page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Tornado Realm</ion-title>\n       <ion-buttons end>\n      <button ion-button icon-only>\n        <ion-icon name="ios-add-circle-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\tornado\tornado.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], Tornado);
@@ -57344,7 +57344,7 @@ var Whirlwind = (function () {
 }());
 Whirlwind = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Component */])({
-        selector: 'page-whirlwind',template:/*ion-inline-start:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\whirlwind\whirlwind.html"*/'<!--\n  Generated template for the Whirlwind page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>whirlwind</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\whirlwind\whirlwind.html"*/,
+        selector: 'page-whirlwind',template:/*ion-inline-start:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\whirlwind\whirlwind.html"*/'<!--\n  Generated template for the Whirlwind page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Whirlwind Realm</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only>\n        <ion-icon name="ios-add-circle-outline"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"D:\Workspace\GitHub\Ionic\tongue-twister-head\src\pages\whirlwind\whirlwind.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
 ], Whirlwind);
@@ -114277,5 +114277,3 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 /***/ })
 /******/ ]);
 //# sourceMappingURL=main.js.map
-
-(function(w){var i=w.Ionic=w.Ionic||{};i.version='3.0.1';i.angular='4.0.0';})(window);
