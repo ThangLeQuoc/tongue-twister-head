@@ -43,15 +43,6 @@
       <ion-badge item-right>{{(tornadoTwisterList| async)?.length}}</ion-badge>
     </ion-item>
   </ion-list>
-
-  <ion-grid>
-    <ion-row center>
-      <ion-col col-12>
-        <!-- Google Chart Component -->
-        <google-gauge-chart [numberOfTwister]="(whirlwindTwisterList| async)?.length+(cycloneTwisterList| async)?.length+(tornadoTwisterList| async)?.length"></google-gauge-chart>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-
+  <!-- Google Chart Component -->
+  <google-gauge-chart [numberOfTwister]="(whirlwindTwisterList| async)?.length+(cycloneTwisterList| async)?.length+(tornadoTwisterList| async)?.length"></google-gauge-chart>
 </ion-content>

@@ -10,7 +10,7 @@ google.charts.load('current', { 'packages': ['gauge'] });
     templateUrl: './google-chart.component.html',
     styles: [`
         #chart_div {
-    width: 55%;
+    width: 43%;
     margin: auto;
 }
     `]
@@ -20,6 +20,7 @@ export class GoogleChartComponent implements OnInit, OnChanges {
     @Input() numberOfTwister: number;
 
     private chartOption = CHART_OPTIONS.option;
+    private chart: any;
 
     ngOnInit() {
         google.charts.load('current', { 'packages': ['gauge'] });
@@ -27,12 +28,13 @@ export class GoogleChartComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges() {
-        google.charts.load('current', { 'packages': ['gauge'] });
+        if (this.chart == null) {
+            google.charts.setOnLoadCallback(() => {
+                this.chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+                this.draw();
+            });
+        }
         google.charts.setOnLoadCallback(() => this.draw());
-    }
-
-    private loadGoogleChart(): void {
-        
     }
 
     private draw() {
@@ -40,8 +42,8 @@ export class GoogleChartComponent implements OnInit, OnChanges {
             ['Label', 'Value'],
             ['Twisters', this.numberOfTwister]
         ]);
-        let chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-        chart.draw(data, this.chartOption);
+        //let chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        this.chart.draw(data, this.chartOption);
     }
 
 
