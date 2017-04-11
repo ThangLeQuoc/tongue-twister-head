@@ -7,10 +7,16 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ionicframework.tonguetwisterhead537498"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.tonguetwisterhead537498"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.tonguetwisterhead537498"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.ionicframework.tonguetwisterhead537498"
         },
         "cordova-plugin-splashscreen": {
@@ -29,5 +35,9 @@
             "PACKAGE_NAME": "com.ionicframework.tonguetwisterhead537498"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.tonguetwisterhead537498"
+        }
+    }
 }
