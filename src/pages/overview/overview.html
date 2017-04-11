@@ -13,6 +13,45 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content center text-center>
+  <div>
+    <h2>Catastrophe Console Overview</h2>
+    <p>Number of Twister per Type</p>
+  </div>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="ios-cloudy-outline" item-left></ion-icon>
+      Whirlwind
+      <ion-badge item-right>{{(whirlwindTwisterList| async)?.length}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="ios-rainy-outline" item-left></ion-icon>
+      Cyclone
+      <ion-badge item-right>{{(cycloneTwisterList| async)?.length}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="ios-thunderstorm-outline" item-left></ion-icon>
+      Tornado
+      <ion-badge item-right>{{(tornadoTwisterList| async)?.length}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row center>
+      <ion-col col-12>
+        <!-- Google Chart Component -->
+        <google-gauge-chart [numberOfTwister]="(whirlwindTwisterList| async)?.length+(cycloneTwisterList| async)?.length+(tornadoTwisterList| async)?.length"></google-gauge-chart>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 
 </ion-content>

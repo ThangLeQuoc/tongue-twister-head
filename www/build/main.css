@@ -24312,3 +24312,8 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+#chart_div {
+  width: 55%;
+  margin: auto;
+}

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, LoadingController  } from 'ionic-angular';
+import { AngularFire, FirebaseListObservable } from "angularfire2";
+import { GoogleChartComponent } from "../../components/google-chart.component";
 
 /**
  * Generated class for the Overview page.
@@ -14,7 +16,20 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class Overview {
 
-  constructor(public navCtrl: NavController) {
+  // Twister List
+  whirlwindTwisterList: FirebaseListObservable<any>;
+  cycloneTwisterList: FirebaseListObservable<any>;
+  tornadoTwisterList: FirebaseListObservable<any>;
+
+  numberOfTwisters: number = 12;
+
+
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private angularFire: AngularFire) {
+    this.whirlwindTwisterList = angularFire.database.list('/whirlwind');
+    this.cycloneTwisterList = angularFire.database.list('/cyclone');
+    this.tornadoTwisterList = angularFire.database.list('/tornado');
   }
 
+  
+ 
 }

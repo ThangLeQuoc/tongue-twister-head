@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from "angularfire2";
+// Text to speech
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 /**
  * Generated class for the Cyclone page.
@@ -15,9 +17,20 @@ import { AngularFire, FirebaseListObservable } from "angularfire2";
 export class Cyclone {
 
   cycloneTwisterList: FirebaseListObservable<any>;
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private angularFire: AngularFire ) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private angularFire: AngularFire,private textToSpeech: TextToSpeech ) {
     this.cycloneTwisterList = angularFire.database.list('/cyclone');
   }
+
+playTwister(twisterText) {
+    this.textToSpeech.speak(twisterText).catch((err) => {
+      let alert = this.alertCtrl.create({
+        title: "Something happened",
+        message: err
+      });
+      alert.present();
+    });
+  }
+  
 
   /** Add new twister */
   addTwister() {
