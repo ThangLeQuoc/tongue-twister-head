@@ -33,6 +33,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.tonguetwisterhead537498"
+        },
+        "cordova-plugin-speechrecognition": {
+            "PACKAGE_NAME": "com.ionicframework.tonguetwisterhead537498"
         }
     },
     "dependent_plugins": {
